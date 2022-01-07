@@ -5,23 +5,38 @@ import { useEffect } from 'react';
 
 function Card(props) {
 
+    const [cards, setCards] = useState([])
+
+
 
     useEffect(() => {
 			fetchData();
 		}, []);
 
-    function fetchData(event) {
-			fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
+    function fetchData() {
+			fetch(
+				'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=NUMBER&page=1000'
+			)
 				.then((res) => res.json())
-				.then((data) => console.log(data))
+				.then((res) => {
+					console.log(res[1].photoUrl);
+					setCards(res);
+				})
 				.catch((err) => console.error(`Oops, something went wrong: ${err}`));
-		}
+            }
+            console.log(cards)
 
     return (
-        <div>
-            <Image/>
-        </div>
-    );
+			<div>
+				{cards.map((card) => (
+					<div key={card.id} className='card'>
+                        <h2>{card.name}</h2>
+						<img src={card.photoUrl} alt={card.named}/>
+					</div>
+				))}
+				<Image />
+			</div>
+		);
 }
 
 export default Card;

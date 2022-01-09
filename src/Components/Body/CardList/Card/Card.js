@@ -15,11 +15,11 @@ function Card(props) {
 
     function fetchData() {
 			fetch(
-				'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=NUMBER&page=1000'
+				'https://last-airbender-api.herokuapp.com/api/v1/characters?name=Afiko'
 			)
 				.then((res) => res.json())
 				.then((res) => {
-					console.log(res[1].photoUrl);
+					console.log(res);
 					setCards(res);
 				})
 				.catch((err) => console.error(`Oops, something went wrong: ${err}`));
@@ -29,7 +29,7 @@ function Card(props) {
     return (
 			<div>
 				{cards.map((card) => (
-					<div key={card.id} className='card'>
+					<div key={card._id} className='card'>
                         <h2>{card.name}</h2>
 						<img src={card.photoUrl} alt={card.named}/>
 					</div>

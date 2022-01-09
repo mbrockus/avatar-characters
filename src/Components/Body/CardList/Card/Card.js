@@ -15,7 +15,7 @@ function Card(props) {
 
     function fetchData() {
 			fetch(
-				'https://last-airbender-api.herokuapp.com/api/v1/characters?name=Afiko'
+				'https://last-airbender-api.herokuapp.com/api/v1/characters'
 			)
 				.then((res) => res.json())
 				.then((res) => {

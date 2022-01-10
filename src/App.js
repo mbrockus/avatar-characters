@@ -11,60 +11,77 @@ import { DataContext } from './dataContext.js';
 
 
 function App() {
+	const [cards, setCards] = useState([]);
 
-    const [cards, setCards] = useState([]);
+	const initialState = {
+			searchString: 'search',
+      search: '',
+		};
 
-    const initialState = {
-      searchString: 'search',
-      message: '',
-    };
 
-    const [formState, setFormState] = useState(initialState);
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // console.log('form submitteed')
-      setFormState(initialState);
-    };
 
-    const handleChange = (event) => {
-      const newState = {
-        ...formState,
-        [event.target.id]: event.target.value,
-      };
-      setFormState(newState);
-    };
+	const [formState, setFormState] = useState(initialState);
+	const handleSubmit = (event) => {
+		event.preventDefault();
 
-		useEffect(() => {
-			fetchData();
-		}, []);
+		console.log('form submitteed');
+		charSearch(formState.search);
+		setFormState(initialState);
+	};
 
-		function fetchData() {
-			fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
-				.then((res) => res.json())
-				.then((res) => {
-					console.log(res);
-					setCards(res);
-				})
-				.catch((err) => console.error(`Oops, something went wrong: ${err}`));
-		}
+	const handleChange = (event) => {
+		const newState = {
+			...formState,
+			[event.target.id]: event.target.value,
+		};
+		setFormState(newState);
+	};
 
-  return (
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	function fetchData() {
+		fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
+			.then((res) => res.json())
+			.then((res) => {
+				console.log(res);
+				setCards(res);
+			})
+			.catch((err) => console.error(`Oops, something went wrong: ${err}`));
+	}
+
+	function charSearch(search) {
+		const url = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${search}}`;
+		console.log('in charSearch');
+		console.log(url);
+
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+				setCards(res);
+			})
+			.catch((err) => console.error(`Oops, something went wrong: ${err}`));
+	}
+
+	return (
 		<div className='app'>
-			<h1>Avatar Characters</h1>
-			<Header  
-      formState={formState} 
-      setFormState={setFormState} 
-      handleSubmit={handleSubmit} 
-      handleChange={handleChange} />
-      <DataContext.Provider value={{ formState }}>
-			<Routes>
-				<Route path='/Dashboard' element={<Body />} />
-				<Route path='/AirNation' element={<AirNation />} />
-				<Route path='/WaterNation' element={<WaterNation />} />
-				<Route path='/EarthNation' element={<EarthNation />} />
-				<Route path='/FireNation' element={<FireNation />} />
-			</Routes>
-      </DataContext.Provider>
+			<DataContext.Provider
+				value={{ formState, handleSubmit, charSearch, cards, setCards, handleChange }}>
+				<Header
+					formState={formState}
+					setFormState={setFormState}
+					handleSubmit={handleSubmit}
+					handleChange={handleChange}
+				/>
+				<Routes>
+					<Route path='/Dashboard' element={<Body />} />
+					<Route path='/AirNation' element={<AirNation />} />
+					<Route path='/WaterNation' element={<WaterNation />} />
+					<Route path='/EarthNation' element={<EarthNation />} />
+					<Route path='/FireNation' element={<FireNation />} />
+				</Routes>
+			</DataContext.Provider>
 			{/* <Body/> */}
 		</div>
 	);

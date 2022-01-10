@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { DataContext } from '../../../dataContext.js';
+import { useContext } from 'react';
 
 
 function Form(props) {
@@ -22,12 +24,13 @@ function Form(props) {
 	// 		setFormState(newState);
             
 	// 	};
+    const { charSearch, formState, handleChange, handleSubmit } = useContext(DataContext);
 
-    const randomSearch = () => {
-        console.log('random search')
-    }
+    // const randomSearch = () => {
+    //     console.log('random search')
+    // }
 
-    const { formState, handleChange, handleSubmit, setFormState } = props
+    // const { formState, handleChange, handleSubmit, setFormState } = props
 
     console.log(formState)
         
@@ -40,8 +43,8 @@ function Form(props) {
 					value={formState.subject}
 					onChange={handleChange}
 				/>
-				<button onClick={randomSearch}>Random</button>
-				<button type='submit'>Send</button>
+				{/* <button onClick={randomSearch}>Random</button> */}
+				<button type='submit'>Submit</button>
 			</form>
 		);
 }

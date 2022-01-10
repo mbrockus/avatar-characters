@@ -45,7 +45,9 @@ function App() {
 	}, []);
 
 	function fetchData() {
-		fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
+		fetch(
+			'https://last-airbender-api.herokuapp.com/api/v1/characters/random?count=500'
+		)
 			.then((res) => res.json())
 			.then((res) => {
 				console.log(res);

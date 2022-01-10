@@ -5,32 +5,8 @@ import { useContext } from 'react';
 
 function Form(props) {
     console.log(props)
-    // const initialState = {
-	// 		searchString: 'search',
-	// 		message: '',
-	// 	};
 
-    // const [formState, setFormState] = useState(initialState);
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     // console.log('form submitteed')
-    //     setFormState(initialState);
-        
-    // };
-
-
-    // const handleChange = (event) => {
-	// 		const newState = { ...formState, [event.target.id]: event.target.value };
-	// 		setFormState(newState);
-            
-	// 	};
     const { charSearch, formState, handleChange, handleSubmit } = useContext(DataContext);
-
-    // const randomSearch = () => {
-    //     console.log('random search')
-    // }
-
-    // const { formState, handleChange, handleSubmit, setFormState } = props
 
     console.log(formState)
         

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function Nav(props) {
     return (
 			<nav >
-				<h1>React Stocks</h1>
 				<ul>
 					<li>
 						<Link to='/Dashboard'>Home</Link>

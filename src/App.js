@@ -71,10 +71,8 @@ function App() {
 	return (
 		<div className='app'>
 			<DataContext.Provider
-				value={{ formState, handleSubmit, charSearch, cards, setCards, handleChange }}>
-				<Header
-
-				/>
+				value={{ formState, handleSubmit, charSearch, cards, setCards, handleChange, fetchData }}>
+				<Header/>
 				<Routes>
 					<Route path='/Dashboard' element={<Body />} />
 					<Route path='/AirNation' element={<AirNation />} />

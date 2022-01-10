@@ -11,7 +11,7 @@ function AirNation(props) {
 
 	function fetchData() {
 		fetch(
-			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=air'
+			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=air&perPage=NUMBER&page=500'
 		)
 			.then((res) => res.json())
 			.then((res) => {

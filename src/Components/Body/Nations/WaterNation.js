@@ -11,7 +11,7 @@ function WaterNation(props) {
 
 	function fetchData() {
 		fetch(
-			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=water'
+			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=water&perPage=NUMBER&page=500'
 		)
 			.then((res) => res.json())
 			.then((res) => {

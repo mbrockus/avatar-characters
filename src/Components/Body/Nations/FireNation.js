@@ -11,7 +11,7 @@ function FireNation(props) {
 
 	function fetchData() {
 		fetch(
-			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire'
+			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=fire&perPage=NUMBER&page=500'
 		)
 			.then((res) => res.json())
 			.then((res) => {

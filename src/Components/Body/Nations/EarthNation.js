@@ -11,7 +11,7 @@ function EarthNation(props) {
 
 	function fetchData() {
 		fetch(
-			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=earth'
+			'https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=earth&perPage=NUMBER&page=500'
 		)
 			.then((res) => res.json())
 			.then((res) => {

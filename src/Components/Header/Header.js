@@ -8,10 +8,7 @@ function Header(props) {
 			<div>
 				<h1>Avatar Characters</h1>
 				<Form
-					formState={props.formState}
-					setFormState={props.setFormState}
-					handleSubmit={props.handleSubmit}
-					handleChange={props.handleChange}
+
 				/>
 				<Nav />
 			</div>

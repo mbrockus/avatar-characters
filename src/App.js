@@ -21,10 +21,13 @@ function App() {
 
 
 	const [formState, setFormState] = useState(initialState);
+
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		console.log('form submitteed');
+		console.log(`formstate search is ${formState.search}`);
+
 		charSearch(formState.search);
 		setFormState(initialState);
 	};
@@ -52,9 +55,10 @@ function App() {
 	}
 
 	function charSearch(search) {
-		const url = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${search}}`;
-		console.log('in charSearch');
-		console.log(url);
+		const url = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${search}`;
+		// console.log('in charSearch');
+		// console.log(url);
+    // console.log('?name=${search}}');
 
 		fetch(url)
 			.then((res) => res.json())
@@ -69,10 +73,7 @@ function App() {
 			<DataContext.Provider
 				value={{ formState, handleSubmit, charSearch, cards, setCards, handleChange }}>
 				<Header
-					formState={formState}
-					setFormState={setFormState}
-					handleSubmit={handleSubmit}
-					handleChange={handleChange}
+
 				/>
 				<Routes>
 					<Route path='/Dashboard' element={<Body />} />

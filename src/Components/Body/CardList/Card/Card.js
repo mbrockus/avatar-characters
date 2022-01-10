@@ -1,22 +1,25 @@
 import React from 'react';
-import Image from './Image.js';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { DataContext } from '../../../../dataContext.js'
+import {useContext} from 'react'
 
 function Card(props) {
 
     const [cards, setCards] = useState([])
 
-
-
     useEffect(() => {
 			fetchData();
 		}, []);
 
-    function fetchData() {
-			fetch(
-				'https://last-airbender-api.herokuapp.com/api/v1/characters'
-			)
+    const { formState } = useContext(DataContext)
+    let url = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${formState.search}`
+
+    console.log(url)
+     
+
+    function fetchData(url) {
+			fetch(url)
 				.then((res) => res.json())
 				.then((res) => {
 					console.log(res);
@@ -24,7 +27,8 @@ function Card(props) {
 				})
 				.catch((err) => console.error(`Oops, something went wrong: ${err}`));
             }
-            console.log(cards)
+
+    // console.log(formState.search)
 
     return (
 			<div>
@@ -34,7 +38,6 @@ function Card(props) {
 						<img src={card.photoUrl} alt={card.named}/>
 					</div>
 				))}
-				<Image />
 			</div>
 		);
 }

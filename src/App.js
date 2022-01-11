@@ -26,7 +26,7 @@ function App() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		console.log(`formstate search is ${formState.search}`);
+
 
 		charSearch(formState.search);
 		setFormState(initialState);
@@ -50,7 +50,7 @@ function App() {
 		)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res);
+
 				setCards(res);
 			})
 			.catch((err) => console.error(`Oops, something went wrong: ${err}`));
@@ -58,9 +58,7 @@ function App() {
 
 	function charSearch(search) {
 		const url = `https://last-airbender-api.herokuapp.com/api/v1/characters?name=${search}`;
-		// console.log('in charSearch');
-		// console.log(url);
-    // console.log('?name=${search}}');
+
 
 		fetch(url)
 			.then((res) => res.json())

@@ -4,7 +4,7 @@
 
 Avatar Characters is a browser based application which is able to show the characters of the show "Avatar: the Last Airbender." It pulls data from the api "https://last-airbender-api.herokuapp.com/" and is able to display character names and images randomly, by affiliate nation, or by search.
 
-![Application Screenshot](./assets)
+![Application Screenshot](./assets/applicationScreenshot.png)
 
 ## Technologies Used
 This project utulizes React, Javascript, Html, and CSS

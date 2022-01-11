@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DataContext } from '../../../dataContext.js';
 import { useContext } from 'react';
+import './Form.css'
 
 
 function Form(props) {

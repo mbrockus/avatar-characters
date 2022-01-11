@@ -1,0 +1,18 @@
+input {
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  width: 50%;
+}
+
+button{
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 12px;
+    cursor: pointer;
+}

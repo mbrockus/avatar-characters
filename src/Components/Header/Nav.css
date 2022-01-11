@@ -1,8 +1,52 @@
-ul li{
-    display: inline;
-    margin: 10px
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 }
+
+ul li {
+    margin: 20px 40px;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 20px;
+
+}
+
+
 
 * {
   box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition-duration: 0.4s;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* .airNav {
+    transition-duration: 0.4s;
+} */
+
+a:hover {
+    color: white;
+    background-color: black;
+}
+
+/* .airNav:hover{
+    color: white;
+    background-color: black;
+} */
+
+@media screen and (max-width: 1010px) {
+ul {
+    flex-direction: column;
+}
+ul li {
+    margin: 10px
+}
 }

@@ -1,0 +1,22 @@
+body {
+  background-image: url("../../../assets/airNationBackground.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bigButton {
+    display: block;
+    width: 80%;
+    margin: auto;
+    border-radius: 12px;
+    border: none;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.bigButton:hover {
+    color: white;
+    background-color: black;
+}

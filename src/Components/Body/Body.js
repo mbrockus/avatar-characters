@@ -4,6 +4,7 @@ import DetailedCard from './DetailedCard/DetailedCard';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../../dataContext';
 import { useContext } from 'react';
+import './Body.css'
 
 
 
@@ -13,7 +14,7 @@ function Body(props) {
     return (
         <div>
             {/* <DetailedCard/> */}
-            <button onClick={fetchData}>See all Characters</button>
+            <button onClick={fetchData} className='bigButton'>See all Characters</button>
             <CardList/>
         </div>
     );

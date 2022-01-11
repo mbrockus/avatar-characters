@@ -12,14 +12,14 @@ function Card(props) {
 
 
     return (
-			<div>
+			<section className='container'>
 				{cards.map((card) => (
 					<div key={card._id} className='card'>
-                        <h2>{card.name}</h2>
-						<img src={card.photoUrl} alt={card.named}/>
+                        <h2 className='card-title'>{card.name}</h2>
+						<img src={card.photoUrl} alt={card.name} className='card-image'/>
 					</div>
 				))}
-			</div>
+			</section>
 		);
 }
 

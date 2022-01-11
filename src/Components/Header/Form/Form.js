@@ -5,11 +5,10 @@ import './Form.css'
 
 
 function Form(props) {
-    console.log(props)
+
 
     const { charSearch, formState, handleChange, handleSubmit } = useContext(DataContext);
 
-    console.log(formState)
         
     return (
 			<form onSubmit={handleSubmit}>

@@ -1,0 +1,8 @@
+ul li{
+    display: inline;
+    margin: 10px
+}
+
+* {
+  box-sizing: border-box;
+}

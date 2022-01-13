@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DataContext } from '../../../dataContext.js';
 import { useContext } from 'react';
 import './Form.css'
 
 
-function Form(props) {
+function Form() {
 
 
-    const { charSearch, formState, handleChange, handleSubmit } = useContext(DataContext);
+    const { formState, handleChange, handleSubmit } = useContext(DataContext);
 
         
     return (

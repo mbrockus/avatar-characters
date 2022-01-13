@@ -1,7 +1,6 @@
 import React from 'react';
 import CardList from './CardList/CardList';
 import DetailedCard from './DetailedCard/DetailedCard';
-import { Link } from 'react-router-dom';
 import { DataContext } from '../../dataContext';
 import { useContext } from 'react';
 import './Body.css'
@@ -20,4 +19,4 @@ function Body(props) {
     );
 }
 
-export default Body;
+export default Body

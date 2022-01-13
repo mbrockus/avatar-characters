@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { DataContext } from '../../../../dataContext'
 import {useContext} from 'react'
 
@@ -8,7 +6,7 @@ function Card(props) {
 
 
 
-    const { formState, handleSubmit, charSearch, cards, setCards } = useContext(DataContext)
+    const { cards } = useContext(DataContext)
 
 
     return (
